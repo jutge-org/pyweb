@@ -1,0 +1,20 @@
+{
+  "name": "Python on the Web",
+  "homepage": "https://pyweb.jutge.org",
+  "description": "Python on the Web helps run Python code in the browser for education purposes",
+  "main": "",
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webix": "^9.4.0",
+    "skulpt": "^1.2.0",
+    "ace-builds": "^1.12.3"
+  }
+}
