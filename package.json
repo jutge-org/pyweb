@@ -9,7 +9,7 @@
     "ace-builds": "^1.12.3",
     "http-server": "^14.1.1",
     "skulpt": "^1.2.0",
-    "webix": "^9.4.0",
+    "webix": "^9.4.0"
   },
   "scripts": {
     "serve": "http-server"
