@@ -1,0 +1,17 @@
+{
+  "name": "pyweb",
+  "version": "1.0.0",
+  "description": "Python on the Web",
+  "repository": "git@github.com:jutge-org/pyweb.git",
+  "author": "Jordi Petit <jpetit@cs.upc.edu>",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "ace-builds": "^1.12.3",
+    "http-server": "^14.1.1",
+    "skulpt": "^1.2.0",
+    "webix": "^9.4.0",
+  },
+  "scripts": {
+    "serve": "http-server"
+  }
+}
