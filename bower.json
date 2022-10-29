@@ -15,6 +15,7 @@
   "dependencies": {
     "webix": "^9.4.0",
     "skulpt": "^1.2.0",
-    "ace-builds": "^1.12.3"
+    "ace-builds": "^1.12.3",
+    "jquery.terminal": "^2.34.0"
   }
 }
