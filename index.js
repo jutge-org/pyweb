@@ -156,7 +156,7 @@ function start() {
                     {
                         template: "<pre id='canvas'></pre>",
                         scroll: "xy",
-                        height: 400,
+                        // height: 400,
                     },
                     {
                         view: "resizer"
