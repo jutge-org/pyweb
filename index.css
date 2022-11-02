@@ -13,3 +13,11 @@
     font-family: 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
     line-height: 1.5;
 }
+
+.webix_secondary .webix_button {
+    background-color: white;
+}
+
+.webix_secondary:hover .webix_button:hover {
+    background-color: white;
+}
