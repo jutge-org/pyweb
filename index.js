@@ -105,8 +105,6 @@ function start() {
                             {
                                 view: "button",
                                 value: "<span title='Executar' style='font-size: x-large;'>▶️</span>",
-                                type: "image",
-                                image: "icons/play.png",
                                 on: {
                                     onItemClick() {
                                         run();
@@ -177,16 +175,16 @@ function start() {
             {
                 rows: [
                     {
-                        template: "<pre id='canvas'></pre>",
+                        template: "<pre id='console'></pre>",
                         scroll: "xy",
-                        // height: 400,
                     },
                     {
                         view: "resizer"
                     },
                     {
-                        template: "<pre id='console'></pre>",
+                        template: "<pre id='canvas'></pre>",
                         scroll: "xy",
+                        // height: 400,
                     },
                 ]
             }
@@ -238,9 +236,10 @@ function start() {
                             on: {
                                 onItemClick() {
                                     var index = $$("llista").getSelectedId() - 1;
-                                    console.log(index)
-                                    var demo = the_demos[index];
-                                    set_code(`# ${demo.name}\n${demo.code}`);
+                                    if (index >= 0) {
+                                        var demo = the_demos[index];
+                                        set_code(`# ${demo.name}\n${demo.code}`);
+                                    }
                                     the_demos_window.hide();
                                 }
                             },
@@ -266,6 +265,7 @@ function start() {
         modal: true,
     });
 
+    // iwebix.message("Benvinguda!");
 }
 
 
