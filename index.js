@@ -9,6 +9,27 @@ print("Bon dia", nom)
 `,
     },
     {
+        name: "Producte de dos nombres",
+        code: `
+a = int(input('Digues un número: '))
+b = int(input('Digues un número: '))
+p = a * b
+print('El producte de', a, 'i', b, 'és', p)
+`,
+    },
+    {
+        name: "Màxim de dos nombres",
+        code: `
+a = int(input('Digues un número: '))
+b = int(input('Digues un número: '))
+if a >= b:
+    m = a 
+else:
+    m = b
+print('El màxim de', a, 'i', b, 'és', m)
+`,
+    },
+    {
         name: "Dibuixar un quadrat",
         code: `
 import turtle
@@ -84,6 +105,8 @@ function start() {
                             {
                                 view: "button",
                                 value: "<span title='Executar' style='font-size: x-large;'>▶️</span>",
+                                type: "image",
+                                image: "icons/play.png",
                                 on: {
                                     onItemClick() {
                                         run();
@@ -194,21 +217,21 @@ function start() {
         view: "window",
         id: "my_win",
         head: "Tria un programa",
-        width: 200,
-        height: 500,
+        width: 250,
+        height: 300,
         body: {
             rows: [
                 {
                     view: "list",
-                    width: 250,
-                    height: 200,
                     template: "#title#",
                     select: true,
                     data: data,
                     id: "llista",
                 },
                 {
-                    cols: [
+                    view: "toolbar",
+                    padding: 0,
+                    elements: [
                         {
                             view: "button",
                             value: "D'acord",
@@ -221,9 +244,10 @@ function start() {
                                     the_demos_window.hide();
                                 }
                             },
-                            autowidth: true,
+                            width: 100,
+                            css: "webix_primary",
                         },
-
+                        {},
                         {
                             view: "button",
                             value: "Cancel·lar",
@@ -232,9 +256,9 @@ function start() {
                                     the_demos_window.hide();
                                 }
                             },
-                            autowidth: true,
+                            width: 100,
+                            css: "webix_primary",
                         },
-
                     ],
                 },
             ],
