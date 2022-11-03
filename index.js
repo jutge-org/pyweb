@@ -342,6 +342,12 @@ function set_code(code) {
 }
 
 
+function use(code) {
+    the_code = code;
+    set_code(the_code);
+}
+
+
 function reset() {
     set_code(the_code);
     clear();

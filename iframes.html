@@ -1,0 +1,28 @@
+<html>
+
+<body>
+    <script>
+        code1 = "# my code 1";
+        code2 = "# my code 2";
+    </script>
+
+    <p>This page shows how to embed pyweb frames in a web page and how to initialize them.</p>
+
+    <p>foo</p>
+
+    <iframe name="frame1" src="http://127.0.0.1:8080/?code=" width="100%" height="450" frameborder="0" marginwidth="0"
+        marginheight="0" allowfullscreen style="border: 1px solid #e8eaec;" onload="init(this, code1)"></iframe>
+    <p>foo</p>
+
+    <iframe name="frame2" src="http://127.0.0.1:8080/?code=" width="100%" height="450" frameborder="0" marginwidth="0"
+        marginheight="0" allowfullscreen style="border: 1px solid #e8eaec;" onload="init(this, code2)"></iframe>
+    <p>foo</p>
+
+    <script>
+        function init(iframe, code) {
+            window.frames[iframe.name].use(code);
+        }
+    </script>
+</body>
+
+</html>
