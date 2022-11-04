@@ -8,6 +8,7 @@
   "dependencies": {
     "ace-builds": "^1.12.3",
     "http-server": "^14.1.1",
+    "ionicons": "^6.0.3",
     "skulpt": "^1.2.0",
     "webix": "^9.4.0"
   },

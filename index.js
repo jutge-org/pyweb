@@ -97,14 +97,8 @@ function start() {
                         elements: [
                             {},
                             {
-                                view: "label",
-                                label: "Lliçons",
-                                autowidth: true,
-                                hidden: true,
-                            },
-                            {
                                 view: "button",
-                                value: "<span title='Executar' style='font-size: x-large;'>▶️</span>",
+                                value: "<ion-icon title='Executar' name='play'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         run();
@@ -114,7 +108,7 @@ function start() {
                             },
                             {
                                 view: "button",
-                                value: "<span title='Esborrar consola' style='font-size: x-large;'>⏹</span>",
+                                value: "<ion-icon title='Esborrar' name='close-circle-outline'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         clear();
@@ -124,7 +118,7 @@ function start() {
                             },
                             {
                                 view: "button",
-                                value: "<span title='Reiniciar' style='font-size: x-large;'>🔄</span>",
+                                value: "<ion-icon title='Reiniciar' name='refresh'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         reset();
@@ -134,7 +128,7 @@ function start() {
                             },
                             {
                                 view: "button",
-                                value: "<span title='URL per compartir' style='font-size: x-large;'>⤴️</span>",
+                                value: "<ion-icon title='Compartir' name='share-social-outline'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         export_program();
@@ -144,7 +138,7 @@ function start() {
                             },
                             {
                                 view: "button",
-                                value: "<span title='Demostracions' style='font-size: x-large;'>*️⃣</span>",
+                                value: "<ion-icon title='Triar programa' name='document-text-outline'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         demos();
@@ -154,7 +148,7 @@ function start() {
                             },
                             {
                                 view: "button",
-                                value: "<span title='Informació' style='font-size: x-large;'>ℹ️</span>",
+                                value: "<ion-icon title='Informació' name='information-circle-outline'></ion-icon>",
                                 on: {
                                     onItemClick() {
                                         info();

@@ -22,3 +22,10 @@
 .webix_secondary:hover .webix_button:hover {
     background-color: white;
 }
+
+ion-icon {
+    font-size: 24px;
+    color: black;
+    margin-left: 12px;
+    margin-right: 12px;
+}
