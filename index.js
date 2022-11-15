@@ -81,9 +81,13 @@ print("El màxim comú divisor dels dos nombres és", a)
 `,
     },
 ];
+
+
 var the_editor = null;
 
 var the_code = get_code_from_url();
+
+var the_solution = get_solution_from_url();
 
 
 function start() {
@@ -122,6 +126,17 @@ function start() {
                                 on: {
                                     onItemClick() {
                                         reset();
+                                    }
+                                },
+                                autowidth: true,
+                            },
+                            {
+                                view: "button",
+                                value: "<ion-icon style='transform: scaleX(-1);' title='Reiniciar' name='pencil'></ion-icon>",
+                                id: 'solution_button',
+                                on: {
+                                    onItemClick() {
+                                        show_solution();
                                     }
                                 },
                                 autowidth: true,
@@ -259,6 +274,10 @@ function start() {
         modal: true,
     });
 
+    if (the_solution == null) {
+        $$("solution_button").hide();
+    }
+
     // iwebix.message("Benvinguda!");
 }
 
@@ -268,8 +287,7 @@ function get_code_from_url() {
     const code = parameters.get('code');
 
     if (code == null) {
-        demo = the_demos[0];
-        return `# ${demo.name}\n${demo.code}`;
+        return "";
     }
 
     if (code.length > 5000) {
@@ -277,6 +295,21 @@ function get_code_from_url() {
     }
 
     return atob(code);
+}
+
+function get_solution_from_url() {
+    const parameters = new URLSearchParams(window.location.search);
+    const solution = parameters.get('sol');
+
+    if (solution == null) {
+        return null;
+    }
+
+    if (solution.length > 5000) {
+        return "# too long solution\n";
+    }
+
+    return atob(solution);
 }
 
 
@@ -344,6 +377,11 @@ function use(code) {
 
 function reset() {
     set_code(the_code);
+    clear();
+}
+
+function show_solution() {
+    set_code(the_solution);
     clear();
 }
 
