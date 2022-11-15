@@ -188,12 +188,12 @@ function start() {
                         scroll: "xy",
                     },
                     {
-                        view: "resizer"
+                        view: "resizer",
                     },
                     {
                         template: "<pre id='canvas'></pre>",
                         scroll: "xy",
-                        // height: 400,
+                        id: "canvas_view",
                     },
                 ]
             }
@@ -274,17 +274,28 @@ function start() {
         modal: true,
     });
 
+    // hide solution button if needed
     if (the_solution == null) {
         $$("solution_button").hide();
+    }
+
+    // hide turtle canvas if needed
+    if (get_parameter("ht") != null) {
+        $$('canvas_view').config.height = 6;
+        $$('canvas_view').resize();
     }
 
     // iwebix.message("Benvinguda!");
 }
 
 
-function get_code_from_url() {
+function get_parameter(name) {
     const parameters = new URLSearchParams(window.location.search);
-    const code = parameters.get('code');
+    return parameters.get(name);
+}
+
+function get_code_from_url() {
+    const code = get_parameter('code');
 
     if (code == null) {
         return "";
@@ -298,8 +309,7 @@ function get_code_from_url() {
 }
 
 function get_solution_from_url() {
-    const parameters = new URLSearchParams(window.location.search);
-    const solution = parameters.get('sol');
+    const solution = get_parameter('sol');
 
     if (solution == null) {
         return null;
