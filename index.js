@@ -305,7 +305,7 @@ function get_code_from_url() {
         return "# too long code\n";
     }
 
-    return atob(code);
+    return decodeURIComponent(window.atob(code));
 }
 
 function get_solution_from_url() {
@@ -319,7 +319,7 @@ function get_solution_from_url() {
         return "# too long solution\n";
     }
 
-    return atob(solution);
+    return decodeURIComponent(window.atob(solution));
 }
 
 
@@ -422,7 +422,7 @@ function write_to_console(text, color = "Black") {
 function export_program() {
     var prog = the_editor.getValue();
     var path = window.location.href.split('?')[0];
-    var enc = btoa(prog);
+    var enc = window.btoa(encodeURIComponent(prog));
     var url = `${path}?code=${enc}`;
     write_to_console(`URL per compartir el programa:\n`, "brown");
     write_to_console(`${url}\n`, "brown");
