@@ -186,6 +186,7 @@ function start() {
                     {
                         template: "<pre id='console'></pre>",
                         scroll: "xy",
+                        id: "console_view",
                     },
                     {
                         view: "resizer",
@@ -338,11 +339,14 @@ function run() {
     });
     myPromise.then(function (mod) {
         write_to_console("<i>Final del programa</i>\n", "darkgreen");
+        // write_to_console("<i>${++kk}</i>\n", "darkgreen");
     },
         function (err) {
             write_to_console("<i>" + err.toString() + "</i>\n", "orange");
         });
 }
+
+var kk = 0;
 
 
 // see https://github.com/skulpt/skulpt/issues/685
@@ -415,7 +419,8 @@ function clear_console() {
 function write_to_console(text, color = "Black") {
     var element = document.getElementById("console");
     element.innerHTML += `<span style='color: ${color};'>${text}</span>`;
-    element.scrollIntoView(false);
+    var view = $$("console_view").getNode();
+    view.scrollTop = view.scrollHeight;
 }
 
 
